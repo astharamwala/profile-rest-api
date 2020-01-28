@@ -20,6 +20,7 @@ from . import views
 
 route = DefaultRouter()
 route.register("hello-vs", views.HelloViewset, basename="hello-vs")
+route.register("UserProfile", views.UserProfileViewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

@@ -50,7 +50,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         return self.email
 
 
-# Registered with admin and will create automatic CRUD
+# Registered with admin and will create automatic CRUD1/
 class Demo(models.Model):
     name = models.CharField(max_length=255)
     age = models.IntegerField()
