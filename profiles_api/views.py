@@ -5,7 +5,7 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework import filters
 
 from . import models, permissions
-from .serializers import HelloSerializer, UserProfileSerializer
+from .serializers import HelloSerializer, UserProfileSerializer, DemoSerializer
 
 
 class HelloApiView(APIView):
@@ -71,3 +71,8 @@ class UserProfileViewset(viewsets.ModelViewSet):
     permission_classes = (permissions.UpdateOwnProfile,)
     filter_backends = (filters.SearchFilter,)
     search_fields = ('name', 'email',)
+
+
+class DemoViewset(viewsets.ModelViewSet):
+    serializer_class = DemoSerializer
+    queryset = models.Demo.objects.all()

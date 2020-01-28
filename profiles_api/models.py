@@ -55,5 +55,8 @@ class Demo(models.Model):
     name = models.CharField(max_length=255)
     age = models.IntegerField()
 
+    class Meta:
+        db_table = "demo"
+
     def __str__(self):
         return self.name + " " + str(self.age)

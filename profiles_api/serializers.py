@@ -23,3 +23,9 @@ class UserProfileSerializer(serializers.ModelSerializer):
         user = models.UserProfile.objects.create_user(email=validated_data["email"], name=validated_data["name"],
                                                       password=validated_data["password"])
         return user
+
+
+class DemoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Demo
+        fields = "__all__"
