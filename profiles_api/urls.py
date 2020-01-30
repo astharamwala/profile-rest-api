@@ -22,9 +22,10 @@ route = DefaultRouter()
 route.register("hello-vs", views.HelloViewset, basename="hello-vs")
 route.register("UserProfile", views.UserProfileViewset)
 route.register("demo", views.DemoViewset)
+route.register("feed", views.UserFeedViewset)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('hello_api', views.HelloApiView.as_view()),
+    path('login/', views.ProfileLoginApiView.as_view()),
     path('', include(route.urls)),
 ]
